@@ -1,0 +1,1 @@
+LOGZIO_REGION=us-east-1 LOGZIO_TRACES_TOKEN=123 docker-compose up

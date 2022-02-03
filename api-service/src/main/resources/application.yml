@@ -1,0 +1,28 @@
+customerclient.url: http://customer-service:8081
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  application:
+    name: api-service
+  sleuth:
+    otel:
+      exporter:
+        otlp:
+          endpoint: http://jaeger-collector:6831
+
+management:
+  endpoint:
+    beans:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: beans
+
+
+opentracing:
+  jaeger:
+    http-sender:
+      url: http://jaeger-collector:14268/api/traces
